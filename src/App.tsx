@@ -1,5 +1,6 @@
 /* import FacebookVisualizer from "./components/FacebookVisualizer/FacebookVisualizer"; */
 
+import XVisualizer from "./components/XVisualizer/XVisualizer";
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
         {/* <FacebookVisualizer /> */}
 
         {/* X Visualizer */}
-       
+        <XVisualizer />
       </section>
     </div>
   );
