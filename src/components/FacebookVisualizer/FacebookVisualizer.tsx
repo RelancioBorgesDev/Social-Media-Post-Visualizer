@@ -1,6 +1,6 @@
 import imgPost from "../../assets/igPostImg.jpg";
-import FaceHeader from "./FaceHeader/FaceHeader";
-import FaceFooter from "./FaceFooter/FaceFooter";
+import FaceHeader from "./components/FaceHeader/FaceHeader";
+import FaceFooter from "./components/FaceFooter/FaceFooter";
 export default function FacebookVisualizer() {
   return (
     <div className=" w-[600px] ">
