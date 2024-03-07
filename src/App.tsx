@@ -1,4 +1,5 @@
-import FacebookVisualizer from "./components/FacebookVisualizer/FacebookVisualizer";
+/* import FacebookVisualizer from "./components/FacebookVisualizer/FacebookVisualizer"; */
+
 
 function App() {
   return (
@@ -14,7 +15,10 @@ function App() {
         {/*  <InstagramVisualizer /> */}
 
         {/* Facebook Visualizer */}
-        <FacebookVisualizer />
+        {/* <FacebookVisualizer /> */}
+
+        {/* X Visualizer */}
+       
       </section>
     </div>
   );
