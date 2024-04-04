@@ -2,14 +2,21 @@ import { GlobeHemisphereWest } from "phosphor-react";
 import Avatar from "../../../Avatar/Avatar";
 import { Dot, MoreHorizontal } from "lucide-react";
 
-export default function FaceHeader() {
+interface IFaceHeader {
+  accountName: string;
+  description: string;
+}
+
+export default function FaceHeader({ accountName, description }: IFaceHeader) {
   return (
     <header className="flex flex-col items-center justify-between px-4 py-2 bg-white text-black rounded-t-lg">
       <section className="w-full flex items-center justify-between bg-white text-black ">
         <div className="flex items-center gap-3">
           <Avatar social_media="FB" />
           <div className="flex flex-col">
-            <h1 className="text-xl font-bold">SunFlower_77</h1>
+            <h1 className="text-xl font-bold">
+              {accountName ? accountName : "Nome de Usuário"}
+            </h1>
             <div className="flex items-center ">
               <h3 className="text-sm text-gray-500">Post feito no brasil</h3>
 
@@ -28,12 +35,7 @@ export default function FaceHeader() {
         <MoreHorizontal className="text-gray-500" />
       </section>
       <section>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
-          enim voluptatibus sequi delectus eius in adipisci possimus doloribus
-          ab, amet, ducimus totam. Natus assumenda repellendus, mollitia quas
-          eligendi rem error!
-        </p>
+        <p>{description ? description : "Descrição do post"}</p>
       </section>
     </header>
   );

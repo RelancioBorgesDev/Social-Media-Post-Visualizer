@@ -1,6 +1,12 @@
 import { Bookmark, Heart, MessageCircle, Send } from "lucide-react";
-
-export default function InstaFooter() {
+interface IInstaFooter {
+  accountName: string;
+  description: string;
+}
+export default function InstaFooter({
+  accountName,
+  description,
+}: IInstaFooter) {
   return (
     <footer className=" bg-white text-zinc-950 px-4 py-4 flex flex-col gap-3 rounded-b-lg">
       <div className="flex justify-between ">
@@ -13,8 +19,12 @@ export default function InstaFooter() {
       </div>
       <span>29.997 curtidas</span>
       <div className="flex gap-2">
-        <h2 className="font-bold">sunflower_77</h2>
-        <p>Mais uma conquista!!! #Feliz #Carro</p>
+        <p>
+          <span className="font-bold ">
+            {accountName ? accountName : "Nome de Usuário"}
+          </span>{" "}
+          {description ? description : "Descrição"}
+        </p>
       </div>
       <span className="text-xs text-gray-500">
         Ver todos os 240 comentários

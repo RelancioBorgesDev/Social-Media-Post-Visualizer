@@ -4,14 +4,28 @@ import imgTeste from "../../assets/igPostImg.jpg";
 import Separator from "../Separator/Separator";
 import XHeader from "./components/XHeader/XHeader";
 import XFooter from "./components/XFooter/XFooter";
-export default function XVisualizer() {
+import { IPostData } from "../../App";
+
+interface XVisualizerProps {
+  post: IPostData;
+}
+export default function XVisualizer({ post }: XVisualizerProps) {
+  const { accountName, postDescription, postImage } = post;
   return (
     <div className="border-2 border-white w-[600px]  bg-white rounded-lg">
       {/* X Header */}
-      <XHeader />
+      <XHeader accountName={accountName} description={postDescription} />
       {/* X Image Wrapper */}
       <div className="w-full p-4 flex flex-col gap-4">
-        <img src={imgTeste} alt="img" className="rounded-xl w-full h-[400px]" />
+        {postImage ? (
+          <img
+            src={postImage}
+            alt="img"
+            className="rounded-xl w-full h-[400px]"
+          />
+        ) : (
+          <div className="rounded-xl w-full h-[400px] bg-zinc-800" />
+        )}
         <div className="flex items-center">
           <span className="text-gray-500">00:00 PM</span>
           <Dot className="text-black" size={24} />
